@@ -61,9 +61,7 @@ Therefore, this project aims to identify a first-order 1-RC equivalent circuit m
 - Calculate capacity by integrating discharge current over time.
 - Use the measured capacity for subsequent SOC estimation.
 
-\[
-Q_n = \frac{1}{3600}\int_0^{t_{\mathrm{end}}}|I(t)|dt
-\]
+
 
 **Calculated capacity:** Approximately 2.009 Ah.
 
@@ -73,21 +71,12 @@ Q_n = \frac{1}{3600}\int_0^{t_{\mathrm{end}}}|I(t)|dt
 - Obtain equilibrium OCV values at different SOC levels.
 - Construct the OCV-SOC lookup table using experimental measurements.
 
-\[
-OCV=f(SOC)
-\]
-
 ### 3. DST-Based Parameter Identification
 
 - Extract the dynamic current and voltage profile from the DST experiment.
 - Calculate SOC using Coulomb counting.
 - Obtain corresponding OCV values using the OCV-SOC lookup table.
 - Estimate R0, R1, and the RC time constant using nonlinear least-squares optimization.
-- Calculate polarization capacitance using:
-
-\[
-C_1=\frac{\tau}{R_1}
-\]
 
 ### 4. FUDS-Based Model Validation
 
@@ -106,19 +95,6 @@ The first-order Thevenin equivalent circuit consists of:
 - **R1:** Polarization resistance.
 - **C1:** Polarization capacitance.
 
-The terminal voltage model using the CALCE current convention is:
-
-\[
-V_t=OCV+I_{\mathrm{CALCE}}R_0-V_1
-\]
-
-The polarization dynamics are represented by:
-
-\[
-\frac{dV_1}{dt}
-=-\frac{V_1}{R_1C_1}
--\frac{I_{\mathrm{CALCE}}}{C_1}
-\]
 
 ## Repository Structure
 
