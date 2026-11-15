@@ -221,4 +221,3 @@ The results indicate that DST-based parameter identification can capture the dom
 
 ---
 
-**Note:** The capacity and OCV-SOC data used in the current implementation are from SP20-1, whereas DST and FUDS data are from SP20-2. This dataset difference should be considered when interpreting the model accuracy.
